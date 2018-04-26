@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+      body {
+        font: 9px sans-serif;
+        color: black;
+      }
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+        stroke-width: 0.5px;
+      }
+      #title{
+        margin-top:50px;
+        font-size:25pt;
+        font-family: 'Abril Fatface', cursive;
+        color:black;
+      }
+
+      #sub{
+        font-size:13pt;
+        margin-left: 3px;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 50px;
+      }
+      #all, #social, #productivity, #utility, #entertainment, #transportation
+      {
+      background-color:white;
+      width:130px;
+      border-radius: 25px;
+      margin-left: 10px;
+      color:black;
+      stroke:black;
+       border-color: black;
+       font-family: 'Open Sans', sans-serif;
+
+      }
+      #all:focus,
+      #all:active,
+      #all.active,
+      #social:focus,
+      #social:active,
+      #social.active,
+      #productivity:focus,
+      #productivity:active,
+      #productivity.active,
+      #utility:focus,
+      #utility:active,
+      #utility.active,
+      #entertainment:focus,
+      #entertainment:active,
+      #entertainment.active,
+      #transportation:focus,
+      #transportation:active,
+      #transportation.active,
+
+      #allmins:focus,
+      #allmins:active,
+      #allmins.active,
+      #socialmins:focus,
+      #socialmins:active,
+      #socialmins.active,
+      #productivitymins:focus,
+      #productivitymins:active,
+      #productivitymins.active,
+      #utilitymins:focus,
+      #utilitymins:active,
+      #utilitymins.active,
+      #entertainmentmins:focus,
+      #entertainmentmins:active,
+      #entertainmentmins.active,
+      #transportationmins:focus,
+      #transportationmins:active,
+      #transportationmins.active,
+
+      #allPercent:focus,
+      #allPercent:active,
+      #allPercent.active,
+      #socialPercent:focus,
+      #socialPercent:active,
+      #socialPercent.active,
+      #prodPercent:focus,
+      #prodPercent:active,
+      #prodPercent.active,
+      #utilPercent:focus,
+      #utilPercent:active,
+      #utilPercent.active,
+      #entPercent:focus,
+      #entPercent:active,
+      #entPercent.active,
+      #transPercent:focus,
+      #transPercent:active,
+      #transPercent.active
+       {
+        color:#E84CA2;
+        stroke:#E84CA2;
+        /* font-family: 'Open Sans', sans-serif; */
+
+         border-color: #E84CA2;
+      }
+
+      #all:hover,
+      #social:hover,
+      #productivity:hover,
+      #utility:hover,
+      #entertainment:hover,
+      #transportation:hover,
+
+      #allmins:hover,
+      #socialmins:hover,
+      #productivitymins:hover,
+      #utilitymins:hover,
+      #entertainmentmins:hover,
+      #transportationmins:hover,
+
+      #allPercent:hover,
+      #socialPercent:hover,
+      #prodPercent:hover,
+      #utilPercent:hover,
+      #entPercent:hover,
+      #transPercent:hover
+       {
+        background-color: #F7E2EE;
+      }
+
+
+
+
+ #allPercent, #socialPercent, #prodPercent,#utilPercent, #entPercent,#transPercent{
+display: none;
+background-color:white;
+width:52px;
+border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+position:absolute;
+right:-450px;
+top:-18px;
+color:black;
+stroke:black;
+ border-color: black;
+ }
+ #allmins, #socialmins, #productivitymins,#utilitymins, #entertainmentmins,#transportationmins{
+display: none;
+ font-family: 'Open Sans', sans-serif;
+   background-color:white;
+   width:52px;
+   border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-top-right-radius: 0px;
+     border-bottom-right-radius: 0px;
+   position:absolute;
+   right:-400px;
+   top:-18px;
+   color:black;
+   stroke:black;
+    border-color: black;
+ }
+
+    </style>
+  </head>
+  <body>
+    <div class="col-md-10 col-md-offset-1" id="chart">
+      <div id="title">Jamie's Cellphone Addiction</div>
+      <div id="sub">January 8 - March 24, 2018</div>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active" id="all">
+          <input type="radio" name="options"> All
+        </label>
+        <label class="btn btn-primary" id="social">
+          <input type="radio" name="options"> Social
+        </label>
+        <label class="btn btn-primary" id="productivity">
+          <input type="radio" name="options"> Productivity
+        </label>
+        <label class="btn btn-primary" id="utility">
+          <input type="radio" name="options"> Utility
+        </label>
+        <label class="btn btn-primary" id="entertainment">
+          <input type="radio" name="options"> Entertainment
+        </label>
+        <label class="btn btn-primary" id="transportation">
+          <input type="radio" name="options"> Transportation
+        </label>
+      </div>
+
+<!-- <br><br> -->
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active" id="allmins">
+    <input type="radio" name="options"> Mins
+  </label>
+  <label class="btn btn-primary" id="socialmins">
+    <input type="radio" name="options"> Mins
+  </label>
+  <label class="btn btn-primary" id="productivitymins">
+    <input type="radio" name="options"> Mins
+  </label>
+  <label class="btn btn-primary" id="utilitymins">
+    <input type="radio" name="options"> Mins
+  </label>
+  <label class="btn btn-primary" id="entertainmentmins">
+    <input type="radio" name="options"> Mins
+  </label>
+  <label class="btn btn-primary" id="transportationmins">
+    <input type="radio" name="options"> Mins
+  </label>
+<!-- </div> -->
+
+<!-- <div class="btn-group" data-toggle="buttons"> -->
+
+        <label class="btn btn-primary" id="allPercent">
+          <input type="radio" name="options">%
+        </label>
+        <label class="btn btn-primary" id="socialPercent">
+          <input type="radio" name="options"> %
+        </label>
+        <label class="btn btn-primary" id="prodPercent">
+          <input type="radio" name="options">%
+        </label>
+        <label class="btn btn-primary" id="utilPercent">
+          <input type="radio" name="options">%
+        </label>
+        <label class="btn btn-primary" id="entPercent">
+          <input type="radio" name="options">%
+        </label>
+        <label class="btn btn-primary" id="transPercent">
+          <input type="radio" name="options">%
+        </label>
+
+
+      </div>
+    </div>
+    <script src="lib/d3.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="lib/theVisualz.js"></script>
+    <script>
+      d3.csv("csvapp.csv", function (error, data) {
+        THEVISUALZ.allBarChart($.extend(true, [], data));
+        $('#allPercent').show();
+        $('#allmins').show();
+        $('allmins').addClass('activate');
+
+
+        $( ".btn" ).click(function() {
+          THEVISUALZ.clearAll();
+          if (this.id == 'all' || this.id == 'allmins') {
+            THEVISUALZ.allBarChart($.extend(true, [], data));
+            $('allmins').addClass('activate');
+            $('#allmins').show();
+            $('#utilitymins').hide();
+            $('#productivitymins').hide();
+            $('#entertainmentmins').hide();
+            $('#socialmins').hide();
+            $('#transportationmins').hide();
+
+              $('#allPercent').show();
+              $('#utilPercent').hide();
+              $('#prodPercent').hide();
+              $('#entPercent').hide();
+              $('#socialPercent').hide();
+              $('#transPercent').hide();
+
+          } else if (this.id == 'social' || this.id == 'socialmins') {
+            THEVISUALZ.socialBarChart($.extend(true, [], data));
+
+            $('#socialmins').addClass('active');
+            $('#allmins').hide();
+            $('#utilitymins').hide();
+            $('#productivitymins').hide();
+            $('#entertainmentmins').hide();
+            $('#socialmins').show();
+            $('#transportationmins').hide();
+
+            $('#socialPercent').show();
+            $('#utilPercent').hide();
+            $('#prodPercent').hide();
+            $('#entPercent').hide();
+            $('#allPercent').hide();
+            $('#transPercent').hide();
+          }
+          else if (this.id == 'productivity' || this.id == 'productivitymins') {
+           THEVISUALZ.productivityBarChart($.extend(true, [], data));
+           $('#productivitymins').addClass('active');
+
+           $('#allmins').hide();
+           $('#utilitymins').hide();
+           $('#productivitymins').show();
+           $('#entertainmentmins').hide();
+           $('#socialmins').hide();
+           $('#transportationmins').hide();
+
+           $('#prodPercent').show();
+           $('#utilPercent').hide();
+           $('#entPercent').hide();
+           $('#socialPercent').hide();
+           $('#allPercent').hide();
+           $('#transPercent').hide();
+         }
+         else if (this.id == 'utility' || this.id == 'utilitymins') {
+          THEVISUALZ.utilityBarChart($.extend(true, [], data));
+          $('#utilitymins').addClass('active');
+
+          $('#allmins').hide();
+          $('#utilitymins').show();
+          $('#productivitymins').hide();
+          $('#entertainmentmins').hide();
+          $('#socialmins').hide();
+          $('#transportationmins').hide();
+
+          $('#utilPercent').show();
+          $('#entPercent').hide();
+          $('#prodPercent').hide();
+          $('#socialPercent').hide();
+          $('#allPercent').hide();
+          $('#transPercent').hide();
+        }
+        else if (this.id == 'entertainment' || this.id == 'entertainmentmins') {
+         THEVISUALZ.entertainmentBarChart($.extend(true, [], data));
+         $('#entertainmentmins').addClass('active');
+
+         $('#allmins').hide();
+         $('#utilitymins').hide();
+         $('#productivitymins').hide();
+         $('#entertainmentmins').show();
+         $('#socialmins').hide();
+         $('#transportationmins').hide();
+
+         $('#entPercent').show();
+         $('#utilPercent').hide();
+         $('#prodPercent').hide();
+         $('#socialPercent').hide();
+         $('#allPercent').hide();
+         $('#transPercent').hide();
+
+
+
+       }
+       else if (this.id == 'transportation' || this.id == 'transportationmins') {
+        THEVISUALZ.transportationBarChart($.extend(true, [], data));
+        $('#transportationmins').addClass('active');
+
+        $('#allmins').hide();
+        $('#utilitymins').hide();
+        $('#productivitymins').hide();
+        $('#entertainmentmins').hide();
+        $('#socialmins').hide();
+        $('#transportationmins').show();
+
+        $('#transPercent').show();
+        $('#entPercent').hide();
+        $('#utilPercent').hide();
+        $('#prodPercent').hide();
+        $('#socialPercent').hide();
+        $('#allPercent').hide();
+
+
+      }
+
+          else if (this.id == 'allPercent') {
+            THEVISUALZ.allBarChartPercentage($.extend(true, [], data));
+
+
+          }
+          else if (this.id == 'socialPercent') {
+            THEVISUALZ.socialBarChartPercentage($.extend(true, [], data));
+
+          }
+          else if (this.id == 'prodPercent') {
+            THEVISUALZ.prodBarChartPercentage($.extend(true, [], data));
+
+          }
+          else if (this.id == 'utilPercent') {
+            THEVISUALZ.utilityBarChartPercentage($.extend(true, [], data));
+
+          }
+          else if (this.id == 'entPercent') {
+            THEVISUALZ.entBarChartPercentage($.extend(true, [], data));
+
+          }
+          else if (this.id == 'transPercent') {
+            THEVISUALZ.transBarChartPercentage($.extend(true, [], data));
+
+          }
+        });
+      });
+
+      THEVISUALZ.onResize();
+
+      $(window).on("resize", function() {
+        THEVISUALZ.onResize();
+      });
+    </script>
+  </body>
+</html>
